@@ -8,8 +8,8 @@ While still *very* free form in nature, the purpose of the `skynet` research gro
 
 
 ## Current Technologies Used
-> ⚠️  
-*Still in the early stages of development.*
+> ⚠️  *Still in the early stages of development.*
+
 Name | Description 
 --- | ---
 `git` | A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
