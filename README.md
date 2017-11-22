@@ -12,7 +12,7 @@ While still *very* free form in nature, the purpose of the `skynet` research gro
 
 Name | Description 
 --- | ---
-`git` | A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-`vagrant` | Provides a declarative configuration file which describes all your software requirements, packages, operating system configuration, users, and more.
-`terraform` | Enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
+[`git`](https://git-scm.com/) | A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+[`vagrant`](https://www.vagrantup.com/) | Provides a declarative configuration file which describes all your software requirements, packages, operating system configuration, users, and more.
+[`terraform`](https://www.terraform.io/) | Enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 [`packer`](https://www.packer.io/) | Easy to use and automates the creation of any type of machine image. 
