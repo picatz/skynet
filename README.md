@@ -1,11 +1,15 @@
 # skynet
 > 🌩  Cloud technology research group for cyber attack &amp; defense competitions.
 
+![friendly_dude](https://i.imgur.com/ONefP55.png)
+
 ## Project Scope
 While still *very* free form in nature, the purpose of the `skynet` research group is to dedicate human resources towards establishing simple, repeatable, and automated solutions for cyber attack &amp; defense competitions by utilizing cloud technologies.
 
-## Current Technologies Used
 
+## Current Technologies Used
+> ⚠️  
+*Still in the early stages of development.*
 Name | Description 
 --- | ---
 `git` | A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
