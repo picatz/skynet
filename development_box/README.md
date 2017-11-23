@@ -8,7 +8,7 @@ The get started using the `skynet` development box, we are using [`vagrant`](htt
 To keep things simple and free, we are using [`VirtualBox`](https://www.virtualbox.org/wiki/Downloads), a general-purpose full virtualizer for x86 hardware, targeted at server, desktop and embedded use.
 
 ### AWS
-The `skynet` development box is built with [*A*mazon *W*eb *S*ervices](https://aws.amazon.com/) in mind. Other cloud providers could be used, but *AWS* has been choosen for its ease-of-use and documentation to allow a "noob" frieldy enviroment. 
+The `skynet` development box is built with [**A**mazon **W**eb **S**ervices](https://aws.amazon.com/) in mind. Other cloud providers could be used, but *AWS* has been choosen for its ease-of-use and documentation to allow a "noob" frieldy enviroment. 
 
 #### Want to use something else?
 If you're interested in expanding the development box to include provisioning for other VM or cloud providers, please feel free to do so by adding the required information to the [`Vagrantfile`](https://github.com/picatz/skynet/blob/master/development_box/Vagrantfile) for this project! Preferably, you would also include the documentation for your changes in this guide.
