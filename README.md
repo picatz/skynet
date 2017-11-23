@@ -17,3 +17,4 @@ Name | Description
 [`terraform`](https://www.terraform.io/) | Enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 [`packer`](https://www.packer.io/) | Easy to use and automates the creation of any type of machine image. 
 [`inspec`](https://www.inspec.io/) | Open-source testing framework for infrastructure with a human-readable language for specifying compliance, security and other policy requirements.
+[`awscli`](https://aws.amazon.com/cli/) | A unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line.
