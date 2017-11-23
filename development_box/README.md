@@ -30,7 +30,7 @@ Login to `AWS` and then go to the [`Identity and Access Management Console`](htt
 
 ![nothing_there](https://i.imgur.com/exdGOYx.png)
 
-Go to the (`Groups`)[https://console.aws.amazon.com/iam/home#/groups] section and then click "Create New Group":
+Go to the [`Groups`](https://console.aws.amazon.com/iam/home#/groups) section and then click "Create New Group":
 
 ![create_new_group](https://i.imgur.com/hOmkkKa.png)
 
