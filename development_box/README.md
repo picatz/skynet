@@ -21,7 +21,7 @@ This guide assumes you've already installed [`git`](https://git-scm.com/), [`vag
 * Create an [`IAM`](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) user and group in `AWS`.
 * Get your required `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID`.
 * Spin up the development box with `vagrant`.
-* Set the [enviroment variables] so the `aws` command-line interface works with `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID`.
+* Set the [enviroment variables](https://en.wikipedia.org/wiki/Environment_variable) so the `aws` command-line interface works with `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID`.
 * Test out the `aws` command-line interface.
 
 ## Create `skynet` AWS Identity and Access Management Group
