@@ -103,6 +103,95 @@ If you or your IAM users forget or lose the secret access key, you can create a 
 #### Learn More about AWS Security
 To learn more about the in-and-outs of AWS security, check out the [official documentation](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) which this guide takes from! At the very least try to familiarize yourself with the [best practices](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html).
 
+## Spin up Development Box
 
+Assuming you haven't `clone`'d this repo to your local box, you will need to do that. This guide is assuming you're working on a unix-like system. Windows users should be able to do the equivlent, but will need to change syntax and hopefully event contribute to the guide with windows support. Or not, because they are windows users:
 
+```shell
+$ git clone https://github.com/picatz/skynet.git
+```
+
+Change into the newly created `skynet` directory (unless you've specified a custom directory):
+```shell
+$ cd `skynet`
+```
+
+Change into the `development_box` directory:
+```shell
+$ cd development_box
+```
+
+Bring up the development box with `vagrant`:
+```shell
+$ vagrant up
+```
+
+> A bunch of stuff will be outputed and you can just wait until it's done doing its thing.
+
+Now, you'll probably want to connect to the development box. I'm sure you didn't come all this way for nothing, right?
+
+```shell
+$ vagrant ssh
+```
+
+Just like that, you'll be connected via `ssh`.
+
+Your command prompt will probably look something like this:
+
+```shell
+ubuntu@skynet:~$
+```
+
+## Configuring `aws` Command-line Tool
+
+You should have a few things installed for you. One of those things is the `aws` command-line tool. It's a powerful command-line application for working with AWS. Using the previously created `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` keys, we will be able to interact with AWS. To let the `aws` tool know about our keys, we can set them as enviroment variables.
+
+You can also set the `AWS_DEFAULT_REGION` and `AWS_DEFAULT_OUTPUT` enviroment variables.
+
+```shell
+ubuntu@skynet:~$ export AWS_ACCESS_KEY_ID="AKIAXXXXXXXXXXXXX"
+ubuntu@skynet:~$ export AWS_SECRET_ACCESS_KEY="XXXXXxxxxxxxxXXXXXxxxxxx/XXXXX"
+ubuntu@skynet:~$ export AWS_DEFAULT_REGION="us-east-1"
+ubuntu@skynet:~$ export AWS_DEFAULT_OUTPUT="table"
+```
+
+If you want to interactively work with `aws`, you can choose to use the `configure` command. This will prompt your for the required settings to configure `aws`.
+
+```shell
+ubuntu@skynet:~$ aws configure
+```
+
+### Using `aws` to get help about `ec2` using the `help` command.
+
+```shell
+ubuntu@skynet:~$ aws ec2 help
+```
+
+### Get `ec2` regions information with `describe-regions` command:
+
+```shell
+ubuntu@skynet:~$ aws ec2 describe-regions
+----------------------------------------------------------
+|                     DescribeRegions                    |
++--------------------------------------------------------+
+||                        Regions                       ||
+|+-----------------------------------+------------------+|
+||             Endpoint              |   RegionName     ||
+|+-----------------------------------+------------------+|
+||  ec2.ap-south-1.amazonaws.com     |  ap-south-1      ||
+||  ec2.eu-west-2.amazonaws.com      |  eu-west-2       ||
+||  ec2.eu-west-1.amazonaws.com      |  eu-west-1       ||
+||  ec2.ap-northeast-2.amazonaws.com |  ap-northeast-2  ||
+||  ec2.ap-northeast-1.amazonaws.com |  ap-northeast-1  ||
+||  ec2.sa-east-1.amazonaws.com      |  sa-east-1       ||
+||  ec2.ca-central-1.amazonaws.com   |  ca-central-1    ||
+||  ec2.ap-southeast-1.amazonaws.com |  ap-southeast-1  ||
+||  ec2.ap-southeast-2.amazonaws.com |  ap-southeast-2  ||
+||  ec2.eu-central-1.amazonaws.com   |  eu-central-1    ||
+||  ec2.us-east-1.amazonaws.com      |  us-east-1       ||
+||  ec2.us-east-2.amazonaws.com      |  us-east-2       ||
+||  ec2.us-west-1.amazonaws.com      |  us-west-1       ||
+||  ec2.us-west-2.amazonaws.com      |  us-west-2       ||
+|+-----------------------------------+------------------+|
+```
 
