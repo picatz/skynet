@@ -17,7 +17,7 @@ If you're interested in expanding the development box to include provisioning fo
 
 This guide assumes you've already installed [`git`](https://git-scm.com/), [`vagrant`](https://github.com/picatz/skynet/blob/master/documentation/vagrant.md), [`VirtualBox`](https://www.virtualbox.org/wiki/Downloads) and have an [`AWS`](https://aws.amazon.com/) account.
 
-##### Roadmap
+#### 🗺  Roadmap
 * Create an [`IAM`](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) user and group in `AWS`.
 * Get your required `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID`.
 * Spin up the development box with `vagrant`.
