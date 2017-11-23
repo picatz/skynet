@@ -26,7 +26,7 @@ This guide assumes you've already installed [`git`], [`vagrant`](https://github.
 
 ## Create `skynet` AWS Identity and Access Management Group
 
-Login to `AWS` and then go to the `Identity and Access Management Console`(https://console.aws.amazon.com/iam/home). You will probably see that you have nothng setup there yet:
+Login to `AWS` and then go to the [`Identity and Access Management Console`](https://console.aws.amazon.com/iam/home). You will probably see that you have nothng setup there yet:
 
 ![nothing_there](https://i.imgur.com/exdGOYx.png)
 
@@ -68,6 +68,8 @@ To create the `picat` and add it to the `skynet` group, we're going to first cli
 
 ![add_user](https://i.imgur.com/TUpiXME.png)
 
+> You will be taken through the `Create New Group Wizard` now!
+
 There are four simple step we need to through. The first step will be to set the `User name` and `Access type` for the user. For this guide we are using the user `picat` and choosing the `Programatic access` type.
 
 ![user_name_and_type](https://i.imgur.com/UPVFkvd.png)
@@ -92,6 +94,7 @@ To get the `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID`, will see the `picat`
 
 ##### Access Keys (Access Key ID and Secret Access Key)
 > ⚠️  Do *NOT* provide your access keys to a third party or store them in a public version control system. You might give someone full access to your account.
+
 Access keys consist of an access key ID (for example, AKIAIOSFODNN7EXAMPLE) and a secret access key (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY). You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query API operations. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process.
 
 ### 🔑  I lost my Secret Key!
