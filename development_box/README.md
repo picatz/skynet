@@ -144,7 +144,7 @@ ubuntu@skynet:~$
 
 ## Configuring `aws` Command-line Tool
 
-You should have a few things installed for you. One of those things is the `aws` command-line tool. It's a powerful command-line application for working with AWS. Using the previously created `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` keys, we will be able to interact with AWS. To let the `aws` tool know about our keys, we can set them as enviroment variables.
+You should have a few things installed for you. One of those things is the `aws` command-line tool. It's a powerful command-line application for working with AWS using the previously created `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` keys. To let the `aws` tool know about our keys, we can set them as enviroment variables.
 
 You can also set the `AWS_DEFAULT_REGION` and `AWS_DEFAULT_OUTPUT` enviroment variables.
 
