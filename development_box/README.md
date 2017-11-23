@@ -58,7 +58,7 @@ You will now see the `skynet` group when you check out the [`Groups`](https://co
 
 ## Create `picat` AWS IAM User
 
-To add a user to the `skynet` group we just created, we need to head over the the `Users`[https://console.aws.amazon.com/iam/home#/users] page.
+To add a user to the `skynet` group we just created, we need to head over the the [`Users`](https://console.aws.amazon.com/iam/home#/users) page.
 
 We will see that we don't have any users, yet!
 
