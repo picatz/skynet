@@ -1,4 +1,38 @@
-# Opt In Required
+# How To
+
+First, `git` clond this repository.
+```
+$ git clone https://github.com/picatz/skynet.git
+```
+
+Change into the `skynet/examples/centos7_apache` directory.
+```
+$ cd skynet
+```
+
+Ensure you have your AWS enviroment variables set. Also fill out the `variables.tf` file with required information that isn't defaulted for you.
+```
+$ export AWS_ACCESS_KEY_ID=""
+$ export AWS_SECRET_ACCESS_KEY="
+$ export AWS_DEFAULT_REGION="us-east-1"
+```
+
+Run the `init` command with `terraform` command.
+```
+$ terraform init
+```
+
+You can sheck what will happen with the `plan` command that is specified in `centos7_apache.tf`.
+```
+$ terraform plan
+```
+
+You can now `apply` the `terraform` plan `centos7_apache.tf`:
+```
+$ terraform apply
+```
+
+## Opt In Required
 > In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so go [`here`](http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce)
 
 To accept the terms to use the official CentOS 7 image costs no money. But, it's required. When you visit their official page, you will see something like this going on at the top of he page:
