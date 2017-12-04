@@ -317,6 +317,59 @@ This will forbid default access to filesystem locations. Add appropriate Directo
 </Directory>
 ```
 
+#### HTTP Request Methods
+
+HTTP 1.1 protocol support many request methods which may not be required and some of them are having potential risk. Typically you may just need GET, HEAD, POST request methods in a web application, which can be configured in the respective Directory directive.
+
+```
+<LimitExcept GET POST HEAD>
+   deny from all
+</LimitExcept>
+```
+
+#### Set cookie with HttpOnly and Secure flag
+
+You can mitigate most of the common Cross Site Scripting attack using HttpOnly and Secure flag in a cookie. Without having HttpOnly and Secure, it is possible to steal or manipulate web application session and cookies and it’s dangerous. You will also need to ensure `mod_headers.so` is enabled in your `httpd.conf`.
+
+```
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+```
+
+#### Prevent Clickjacking Attack
+
+Clickjacking is well-known web application vulnerabilities. You will also need to ensure `mod_headers.so` enabled in your `httpd.conf`.
+
+```
+Header always append X-Frame-Options SAMEORIGIN
+```
+
+#### X-XSS Protection
+
+Cross Site Scripting (XSS) protection can be bypassed in many browsers. You can apply this protection for a web application if it was disabled by the user. This is used by a majority of giant web companies like Facebook, twitter, Google, etc.
+
+```
+Header set X-XSS-Protection “1; mode=block”
+```
+
+#### Disable HTTP 1.0 Protocol
+
+When we talk about security, we should protect as much we can. So why do we use older HTTP version of the protocol, let’s disable them as well? HTTP 1.0 has security weakness related to session hijacking. We can disable this by using the mod_rewrite module. Your will need to ensure to load `mod_rewrite` module in your `httpd.conf` file.
+
+```
+RewriteEngine On
+RewriteCond %{THE_REQUEST} !HTTP/1.1$
+RewriteRule .* - [F]
+```
+
+#### Timeout Value Configuration
+
+By default Apache time-out value is 300 seconds, which can be a victim of Slow Loris attack. To mitigate this you can lower the timeout value to maybe 30 seconds.
+
+```
+Timeout 30
+```
+
+
 #### Protect Against DoS and DDoS with `mod_evasive`
 
 The mod_evasive Apache module, formerly known as mod_dosevasive, helps protect against DoS, DDoS (Distributed Denial of Service), and brute force attacks on the Apache web server. It can provide evasive action during attacks and report abuses via email and syslog facilities. 
@@ -547,3 +600,4 @@ This was easy to put together thanks to wonderful resources found online which I
 * [7 basic tips to improve Apache security](https://www.rosehosting.com/blog/7-basic-tips-to-improve-apache-security/)
 * [How to Install Apache on CentOS 7](https://www.liquidweb.com/kb/how-to-install-apache-on-centos-7/)
 * [Apache Web Server Hardening & Security Guide](https://geekflare.com/apache-web-server-hardening-security/)
+* [Security Harden CentOS 7](https://highon.coffee/blog/security-harden-centos-7/)
