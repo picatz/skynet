@@ -22,7 +22,7 @@ Run the `init` command with `terraform` command.
 $ terraform init
 ```
 
-You can sheck what will happen with the `plan` command that is specified in `centos7_apache.tf`.
+You can check what will happen with the `plan` command that is specified in `centos7_apache.tf`.
 ```
 $ terraform plan
 ```
