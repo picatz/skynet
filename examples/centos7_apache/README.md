@@ -171,6 +171,61 @@ We've started `httpd`, but now we're done with it. Or maybe we see that it's on,
 $ sudo systemctl stop httpd
 ```
 
+## Changing Default Page
+
+If we were to use `curl` to check out our `localhost`, we could wee the default Apache web page.
+
+```
+$ curl localhost
+```
+
+To add our own custom default web page, we can add a basic `index.html` file to the `/var/www/html/` directory.
+
+```
+$ sudo bash -c "sudo echo 'Hello World' > /var/www/html/index.html"
+```
+
+> ⚡️  The reason I am using the `sudo bash -c` syntax is so that the following command in `"` is run with `sudo`.
+
+Now when we `curl` our localhost, we are able to see "`Hello World`"!
+
+```
+$ curl localhost
+Hello World
+```
+
+# MariaDB
+
+> 🔧  **Want to go further?** How about we try installing MariaDB, a MySQL drop-in replacement!
+
+MariaDB is a community-developed fork of the MySQL created by the original creator of MySQL!
+
+## Install MariaDB
+
+Much like with `httpd`, we'll use `yum install` with `sudo` to install both `mariadb-server` and `mariadb`.
+
+```
+$ sudo yum install mariadb-server mariadb -y
+```
+
+## Start MariaDB
+
+Again, much like with `httpd`, we can `start` it.
+
+```
+$ sudo systemctl start mariadb
+```
+
+## Quick'n Dirty MariaDB Security
+
+> ⚡️  This tip also works for your normal `mysql` server!
+
+We can use the sudo `mysql_secure_installation` command which is a script that will interactively run us through doing a basic security upgrade to our SQL server.
+
+```
+$ sudo mysql_secure_installation
+```
+
 # Opt In Required
 > In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so go [`here`](http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce)
 
