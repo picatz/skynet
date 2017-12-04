@@ -66,11 +66,12 @@ $ terraform destroy
 
 Don't worry though. If you want it back up, just `terraform apply` again!
 
-### What now?
+## What now?
 
 * [Install Apache](https://github.com/picatz/skynet/blob/master/examples/centos7_apache/install_apache.md)
 * [Configure Apache](https://github.com/picatz/skynet/blob/master/examples/centos7_apache/configure_apache.md)
 * [Install MariaDB](https://github.com/picatz/skynet/blob/master/examples/centos7_apache/install_mariadb.md)
+* [Harden CentOS](https://github.com/picatz/skynet/blob/master/examples/centos7_apache/harden.md)
 
 # Opt In Required
 > In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so go [`here`](http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce)
