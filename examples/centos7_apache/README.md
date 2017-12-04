@@ -1,6 +1,6 @@
 # How To
 
-First, `git` clond this repository.
+First, `git` clone this repository.
 ```
 $ git clone https://github.com/picatz/skynet.git
 ```
@@ -10,7 +10,7 @@ Change into the `skynet/examples/centos7_apache` directory.
 $ cd skynet
 ```
 
-Ensure you have your AWS enviroment variables set. Also fill out the `variables.tf` file with required information that isn't defaulted for you.
+Ensure you have your [AWS](https://aws.amazon.com/) enviroment variables set. Also fill out the `variables.tf` file with required information that isn't defaulted for you. If you haven't set up your keys yet, please follow my [other guide](https://github.com/picatz/skynet/blob/master/AWS_access_management.md)
 ```
 $ export AWS_ACCESS_KEY_ID=""
 $ export AWS_SECRET_ACCESS_KEY="
