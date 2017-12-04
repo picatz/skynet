@@ -18,3 +18,13 @@ Name | Description
 [`packer`](https://www.packer.io/) | Easy to use and automates the creation of any type of machine image. 
 [`inspec`](https://www.inspec.io/) | Open-source testing framework for infrastructure with a human-readable language for specifying compliance, security and other policy requirements.
 [`awscli`](https://aws.amazon.com/cli/) | A unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line.
+
+## Project Details
+
+The `skynet` project has many sub-project.
+
+Name | Description 
+--- | ---
+[`Development Box`](https://github.com/picatz/skynet/tree/master/examples/centos7_apache) | The official development box.
+[`Documentation`](https://github.com/picatz/skynet/tree/master/examples/centos7_apache) | Specific documentation for the project.
+[`CentOS 7 Apache`](https://github.com/picatz/skynet/tree/master/examples/centos7_apache) | How to install and configure Apache.
