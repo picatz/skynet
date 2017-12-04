@@ -91,3 +91,54 @@ net.ipv4.conf.all.rp_filter = 1
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.tcp_timestamps = 0
 ```
+
+## Console Screen Locking
+
+Install `screen` to allow console locking.
+
+```
+$ sudo yum install screen
+```
+
+Users can now run `screen` and lock the console with `ctrl+a x`.
+
+## Securing Cron
+
+```
+$ sudo touch /etc/cron.allow
+$ sudo chmod 600 /etc/cron.allow
+$ sudo bash -c "awk -F: '{print $1}' /etc/passwd | grep -v root > /etc/cron.deny"
+$ sudo touch /etc/at.allow
+$ sudo chmod 600 /etc/at.allow
+$ sudo bash -c "awk -F: '{print $1}' /etc/passwd | grep -v root > /etc/at.deny"
+```
+
+## Deny All TCP Wrappers
+
+TCP wrappers can provide a quick and easy method for controlling access to applications linked to them. Examples of TCP Wrapper aware applications are sshd, and portmap.
+
+Block all but SSH:
+```
+$ sudo bash -c 'echo "ALL:ALL" >> /etc/hosts.deny'
+$ sudo bash -c 'echo "sshd:ALL" >> /etc/hosts.allow'
+```
+
+## Buffer Overflow Protection
+
+Helps prevent stack smashing / BOF.
+
+```
+$ sudo bash -c "echo 'kernel.exec-shield = 1' >> /etc/sysctl.conf"
+```
+
+Set runtime for `kernel.randomize_va_space`.
+
+```
+$ sudo bash -c "echo 'kernel.randomize_va_space = 2' >> /etc/sysctl.conf"
+```
+
+## Prevent Log In to Accounts With Empty Password
+
+```
+$ sudo sed -i 's/\<nullok\>//g' /etc/pam.d/system-auth
+``
