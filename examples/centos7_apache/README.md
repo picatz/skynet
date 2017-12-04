@@ -32,6 +32,40 @@ You can now `apply` the `terraform` plan `centos7_apache.tf`:
 $ terraform apply
 ```
 
+To show all of the infromation for what happend, like the public IP address of the instance that's been deployed:
+```
+$ terraform show
+```
+
+You can easily do something like `grep` for specific infromation:
+```
+$ terraform show | grep "public_dns"
+public_dns = ec2-3-4-5-6.compute-1.amazonaws.com
+```
+
+You could also pipe the `grep` output into `awk`:
+```
+$ terraform show | grep "public_dns" | awk -F " = " '{print $2}'
+ec2-3-4-5-6.compute-1.amazonaws.com
+```
+
+To `ssh` into our instance:
+```
+$ ssh centos@ec2-3-4-5-6.compute-1.amazonaws.com
+Last login: Mon Dec  4 01:47:12 2017 from 12.34.56.678
+[centos@ip-172-31-26-142 ~]$ 
+```
+
+> 🎉  **That's it!**
+
+Now, you may want to destroy it to freely test out other instances without worrying, right? Sure! When we `exit` out of your CentOS instance, we can use the `destroy` command with `terraform` to destroy everything we made.
+
+```
+$ terraform destroy
+```
+
+Don't worry though. If you want it back up, just `terraform apply` again!
+
 ## Opt In Required
 > In order to use this AWS Marketplace product you need to accept terms and subscribe. To do so go [`here`](http://aws.amazon.com/marketplace/pp?sku=aw0evgkw8e5c1q413zgy5pjce)
 
