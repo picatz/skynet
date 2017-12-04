@@ -212,16 +212,14 @@ In order to actually edit files, you're probably going to want to know how to us
 
 > ⚡️  To help automate the process of editing text files in a [shell script](https://en.wikipedia.org/wiki/Shell_script), you may want to look at command-line tools like [`awk`](https://en.wikipedia.org/wiki/AWK) and [`sed`](https://en.wikipedia.org/wiki/Sed).
 
-##### Listen on all network interfaces for a port
-
-To listen on all network interfaces for a given port `80`, we want to sthe `Listen` directive 
+#### Listen on all network interfaces for a port
 
 We can change this to `Listen` directive to a specific IP addresses and port to prevent Apache from glomming onto all bound IP addresses. 
 ```
 Listen 192.0.2.1:80
 ```
 
-##### Listen for IPv4
+#### Listen for IPv4
 
 If you want Apache to handle IPv4 connections only, specify an IPv4 address on all Listen directives:
 
@@ -229,7 +227,7 @@ If you want Apache to handle IPv4 connections only, specify an IPv4 address on a
 Listen 0.0.0.0:80
 ```
 
-##### Disable Trace HTTP Request
+#### Disable Trace HTTP Request
 
 TraceEnable, when on, allows for Cross Site Tracing Issue and potentially giving the option to a hacker to steal your cookie information.
 
@@ -237,7 +235,7 @@ TraceEnable, when on, allows for Cross Site Tracing Issue and potentially giving
 TraceEnable off
 ```
 
-##### Run as separate User & Group
+#### Run as separate User & Group
 
 It is good to run Apache in its own non-root account. Modify User & Group Directive in `httpd.conf`:
 
@@ -246,7 +244,7 @@ User apache
 Group apache
 ```
 
-##### Disable Server Signature
+#### Disable Server Signature
 
 It’s good to disable Signature, as you may not wish to as easily reveal which specific Apache Version you are running.
 
@@ -254,7 +252,7 @@ It’s good to disable Signature, as you may not wish to as easily reveal which 
 ServerSignature Off
 ```
 
-##### Disable Banner
+#### Disable Banner
 
 This directive controls whether Server response header field, which is sent back to clients, includes a description of the generic OS-type of the server as well as information about compiled-in modules.
 
@@ -262,7 +260,7 @@ This directive controls whether Server response header field, which is sent back
 ServerTokens Prod
 ```
 
-##### Restrict Access to a Specific Network or IP
+#### Restrict Access to a Specific Network or IP
 
 If you wish your site to be viewed only by specific IP address or network, you can modify your site Directory in `httpd.conf`:
 
@@ -276,7 +274,7 @@ If you wish your site to be viewed only by specific IP address or network, you c
 </Directory>
 ```
 
-##### Disable Directory Listing
+#### Disable Directory Listing
 
 If you don’t have `index.html` under your WebSite Directory, the client will see all files and sub-directories listed in the browser. To disable directory browsing, you can either set the value of Option directive to `None` or `-Indexes`.
 
@@ -288,7 +286,7 @@ If you don’t have `index.html` under your WebSite Directory, the client will s
 </Directory>
 ```
 
-##### Protecting System Settings
+#### Protecting System Settings
 
 To run a really tight ship, you'll want to stop users from setting up .htaccess files which can override security features you've configured. Here's one way to do it. This prevents the use of .htaccess files in all directories apart from those specifically enabled.
 
@@ -298,7 +296,7 @@ To run a really tight ship, you'll want to stop users from setting up .htaccess 
 </Directory>
 ```
 
-##### Protect Server Files by Default
+#### Protect Server Files by Default
 
 One aspect of Apache which is occasionally misunderstood is the feature of default access. That is, unless you take steps to change it, if the server can find its way to a file through normal URL mapping rules, it can serve it to clients. This would allow clients to walk through the entire filesystem. So, we're going to need to fix that. 
 
@@ -319,7 +317,7 @@ This will forbid default access to filesystem locations. Add appropriate Directo
 </Directory>
 ```
 
-##### Protect Against DoS and DDoS with `mod_evasive`
+#### Protect Against DoS and DDoS with `mod_evasive`
 
 The mod_evasive Apache module, formerly known as mod_dosevasive, helps protect against DoS, DDoS (Distributed Denial of Service), and brute force attacks on the Apache web server. It can provide evasive action during attacks and report abuses via email and syslog facilities. 
 
@@ -367,7 +365,7 @@ $ sudo chown -R apache:apache /var/log/mod_evasive
 
 ```
 
-##### Name-Based Virtual Hosts
+#### Name-Based Virtual Hosts
 
 Apache breaks down its functionality and components into individual units that can be customized and configured independently. The basic unit that describes an individual site or domain is called a virtual host. Virtual hosts allow one server to host multiple domains or interfaces by using a matching system. 
 
@@ -455,7 +453,6 @@ server_ip_address example.com
 server_ip_address example2.com
 ```
 This will direct any requests for `example.com` and `example2.com` on our local computer and send them to our server at `server_ip_address`.
-
 
 
 # MariaDB
