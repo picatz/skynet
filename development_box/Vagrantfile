@@ -21,10 +21,15 @@ Vagrant.configure("2") do |config|
   end
  
   # Custom Provisioning 
-  config.vm.provision "shell", path: "../setup/install_apt_https.sh",        privileged: false
-  config.vm.provision "shell", path: "../setup/update_and_updgrade_apt.sh",  privileged: false
-  config.vm.provision "shell", path: "../setup/install_terraform.sh",        privileged: false
-  config.vm.provision "shell", path: "../setup/install_packer.sh",           privileged: false
-  config.vm.provision "shell", path: "../setup/install_aws_cli.sh",          privileged: false
+  config.vm.provision "shell", path: "../setup/install_apt_https.sh",       privileged: false
+  config.vm.provision "shell", path: "../setup/update_and_updgrade_apt.sh", privileged: false
+  config.vm.provision "shell", path: "../setup/install_terraform.sh",       privileged: false
+  config.vm.provision "shell", path: "../setup/install_packer.sh",          privileged: false
+  config.vm.provision "shell", path: "../setup/install_aws_cli.sh",         privileged: false
+  aws_creds = []
+  aws_creds << `echo $AWS_ACCESS_KEY_ID`.strip
+  aws_creds << `echo $AWS_SECRET_ACCESS_KEY`.strip
+  aws_creds << `echo $AWS_DEFAULT_REGION`.strip
+  config.vm.provision "shell", path: "../setup/install_aws_creds.sh",       privileged: false, args: aws_creds
 
 end
