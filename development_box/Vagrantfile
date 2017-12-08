@@ -30,6 +30,7 @@ Vagrant.configure("2") do |config|
   aws_creds << `echo $AWS_SECRET_ACCESS_KEY`.strip
   aws_creds << `echo $AWS_DEFAULT_REGION`.strip
   config.vm.provision "shell", path: "../setup/install_aws_creds.sh",       privileged: false, args: aws_creds
+  config.vm.provision "shell", path: "../setup/install_docker.sh",          privileged: false
   config.vm.provision "shell", path: "../setup/git_skynet_repo.sh",         privileged: false
   config.vm.provision "shell", path: "../setup/create_ssh_id_rsa_key.sh",   privileged: false
 end
