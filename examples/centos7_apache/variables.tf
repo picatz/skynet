@@ -16,5 +16,5 @@ variable "aws_secret_key" {
 
 variable "aws_region" {
   description = "Region to run the EC2 instance in."
-  default     = "us-east-1a"
+  default     = "us-east-1"
 }
